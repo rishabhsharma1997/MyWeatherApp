@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import WeatherForm from './components/formsComponents/WeatherForm';
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import WeatherForm from "./components/formsComponents/WeatherForm";
 function App() {
-  const isDarkMode = useSelector(state => state.isDark);
-
+  const isDarkMode = useSelector((state) => state.isDark);
+  // Dark mode creator
   useEffect(() => {
-    document.body.classList.toggle('bg-dark', isDarkMode);
-    document.body.classList.toggle('bg-light', !isDarkMode);
+    document.body.classList.toggle("bg-dark", isDarkMode);
+    document.body.classList.toggle("bg-light", !isDarkMode);
   }, [isDarkMode]);
 
   return (
