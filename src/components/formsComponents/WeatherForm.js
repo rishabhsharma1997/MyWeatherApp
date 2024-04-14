@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
-import Input from '../UI/Input';
-import Card from '../UI/Card';
-import ErrorModal from '../modals/ErrorModal';
+import React, { useRef, useState } from "react";
+import Input from "../UI/Input";
+import Card from "../UI/Card";
+import ErrorModal from "../modals/ErrorModal";
 function WeatherForm() {
   const [data, setData] = useState(null);
   const [errorModal, setErrorModal] = useState(false);
@@ -9,11 +9,12 @@ function WeatherForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const url = "https://weatherapp-jmt1.onrender.com/" + placeRef.current.value + "/";
+    const url =
+      "https://weatherapp-jmt1.onrender.com/" + placeRef.current.value + "/";
     try {
       const response = await fetch(url);
       const jsonData = await response.json();
-      if (jsonData.cod === '404') {
+      if (jsonData.cod === "404") {
         setErrorModal(true);
       } else {
         setData(jsonData);
